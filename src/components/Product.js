@@ -14,8 +14,10 @@ function Product({ id, title, price, description, category, image }) {
   const [isRented] = useState(Math.random() < 0.5);
 
   return (
-    <div>
-      <p>{category}</p>
+    <div className="relative flex flex-col m-5 bg-white z-30 p-10">
+      <p className="absolute top-2 right-2 text-xs italic text-gray-400">
+        {category}
+      </p>
       <Image
         src={image}
         height={200}
@@ -23,7 +25,7 @@ function Product({ id, title, price, description, category, image }) {
         alt={title}
         objectFit="contain"
       />
-      <h4>{title}</h4>
+      <h4 className="my-3">{title}</h4>
       <div className="flex">
         {Array(rating)
           .fill()
@@ -31,12 +33,16 @@ function Product({ id, title, price, description, category, image }) {
             <StarIcon className="h-5 text-yellow-500" />
           ))}
       </div>
-      <p>{description}</p>
-      <div>
+      <p className="text-xs my-2 line-clamp-2">{description}</p>
+      <div className="mb-5">
         <Currency quantity={price} currency="USD" />
       </div>
-      {isRented && <p>This product is rented</p>}
-      <button>Rent</button>
+      {isRented && (
+        <div className="flex items-center space-x-2 -mt-5">
+          <p className="text-xs text-gray-500">This car is rented</p>
+        </div>
+      )}
+      <button className="mt-auto button">Rent</button>
     </div>
   );
 }
