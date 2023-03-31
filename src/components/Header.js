@@ -43,6 +43,21 @@ function Header() {
             </div>
         </div>
         {/* Bottom nav */}
+        <div className="flex items-center space-x-3 p-2 pl-6 bg-amazon_blue-light text-white text-sm">
+            <p className="link flex items-center">
+            <MenuIcon className="h-6 mr-1"/>
+            All
+            </p>
+            <p className="link">Pricing</p>
+            <p className="link">Book a Car</p>
+            <p className="link">Locations</p>
+            <p className="link hidden lg:inline-flex">FAQ</p>
+            <p className="link hidden lg:inline-flex">Help Center</p>
+            <p className="link hidden lg:inline-flex">Guides</p>
+            <p className="link hidden lg:inline-flex">Contact Us</p>
+            <p className="link hidden lg:inline-flex">Station Partnerships</p>
+            <p className="link hidden lg:inline-flex"></p>
+        </div>
         <div></div>
     </header>
   )
